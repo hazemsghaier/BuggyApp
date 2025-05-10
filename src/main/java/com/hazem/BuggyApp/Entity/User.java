@@ -1,5 +1,6 @@
 package com.hazem.BuggyApp.Entity;
 
+import com.hazem.BuggyApp.Enum.Roles;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,6 +24,9 @@ public class User {
 
     private String phone;
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Roles role;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();

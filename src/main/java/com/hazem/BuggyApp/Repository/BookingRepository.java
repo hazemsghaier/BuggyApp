@@ -12,16 +12,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface BookingRepository extends JpaRepository<Booking, Integer>{
-List<Booking> findByRoomAndStartTimeLessThanAndEndTimeGreaterThan(
-        Room room,
-        LocalDateTime requestedEnd,
-        LocalDateTime requestedStart
-);
-@Query("""
-      SELECT b FROM Booking b
-       WHERE b.room   = :room
-         AND b.startTime < :requestedEnd
-         AND b.endTime   > :requestedStart
-    """)
-List<Booking> findOverlappingBookings(Room room, LocalDateTime requestedStart, LocalDateTime requestedEnd);
+
 }

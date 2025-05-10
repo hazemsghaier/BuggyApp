@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: BuggyApp
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  datasource:
+    username: hazem
+    password: hazem
+    url: jdbc:postgresql://localhost:5444/reservation_system
+    driver-class-name: org.postgresql.Driver
